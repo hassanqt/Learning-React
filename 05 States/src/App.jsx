@@ -1,34 +1,24 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [clickkk, setClickkk] = useState(0);
+  let [number, setNumber] = useState(0);
 
   let inc = () => {
-    setClickkk(++clickkk);
+    console.log("Heyyyyyyyyy")
+    setNumber(++number);
   };
 
-  let dec = () => {
-    if (clickkk > 0) {
-      setClickkk(--clickkk);
-    }
+  let dsc = () => {
+    console.log("Heyy");
+    if (number > 0) setNumber(number - 1);
   };
 
   return (
-    <div className="w-full h-screen flex flex-col gap-4 justify-center items-center">
-      <h2>The value of variable num is {clickkk}</h2>
+    <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
+      <div className="wrapper flex justify-center items-center">The Current Value of number is: {number}</div>
       <div className="flex justify-center items-center gap-4">
-        <button
-          onClick={inc}
-          className="px-6 py-2 bg-green-500 rounded-full cursor-pointer active:translate-y-0.5"
-        >
-          Increase
-        </button>
-        <button
-          onClick={dec}
-          className="px-6 py-2 bg-red-500 rounded-full cursor-pointer active:translate-y-0.5"
-        >
-          Increase
-        </button>
+        <button onClick={inc} className="py-2 px-6 rounded-full cursor-pointer active:translate-y-0.5 bg-green-500">Increase Value</button>
+        <button onClick={dsc} className="py-2 px-6 rounded-full cursor-pointer active:translate-y-0.5 bg-red-500">Decrease Value</button>
       </div>
     </div>
   );
