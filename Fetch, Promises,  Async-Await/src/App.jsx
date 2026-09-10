@@ -24,7 +24,7 @@ const App = () => {
   };
 
   return (
-    <main className="scrollbar-none overflow-auto flex h-100dvh w-full flex-col bg-zinc-950 text-white">
+    <main className="scrollbar-none overflow-auto flex h-[100dvh] w-full flex-col bg-zinc-950 text-white">
       <header className="border-b border-white/10 bg-zinc-950/90 px-5 py-5 backdrop-blur sm:px-8">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
           <div>
@@ -43,8 +43,8 @@ const App = () => {
         </div>
       </header>
 
-      <section className="min-h-0 flex-1 overflow-y-auto px-5 py-6 sm:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="min-h-full flex-1 overflow-y-auto px-5 py-6 sm:px-8">
+        <div className="mx-auto h-full max-w-7xl">
           {error && (
             <p className="mb-5 rounded-lg border border-rose-500/30 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
               {error}
@@ -52,8 +52,8 @@ const App = () => {
           )}
 
           {images.length === 0 && !isLoading ? (
-            <div className="flex min-h-72 items-center justify-center rounded-2xl border border-dashed border-white/15 bg-white/3 text-center">
-              <div>
+            <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-white/15 bg-white/3 text-center">
+              <div className="h-full flex flex-col justify-center items-center">
                 <p className="text-base font-medium">Your gallery is ready.</p>
                 <p className="mt-1 text-sm text-zinc-400">
                   Select “Get new images” to load a fresh collection.
