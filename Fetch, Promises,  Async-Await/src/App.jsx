@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState("");    
 
   const fetchImages = async () => {
     setIsLoading(true);
@@ -22,6 +22,10 @@ const App = () => {
       setIsLoading(false);
     }
   };
+
+    useEffect(() => {
+    fetchImages();
+    }, [])
 
   return (
     <main className="scrollbar-none overflow-auto flex h-[100dvh] w-full flex-col bg-zinc-950 text-white">
